@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - header_tag_css_isolation_repro</title>
+    <link rel="stylesheet" href="~/header-tag-css-isolation-repro.styles.css" asp-append-version="true" />
+</head>
+<body>
+<partial name="_Header"/>
+
+<main role="main">
+    @RenderBody()
+</main>
+
+<partial name="_Footer"/>
+</body>
+</html>
