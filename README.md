@@ -51,3 +51,17 @@ Page content
 </footer>
 </body>
 ```
+
+**UPDATE**: The `form` element also seems not to work with CSS isolation:
+```html
+<form>
+The form element is also not supported, regardless you apply tag helpers or do not
+</form>
+```
+
+```css
+/* _content/header-tag-css-isolation-repro/Pages/Index.cshtml.rz.scp.css */
+form[b-yate93u0ku] {
+    color: red;
+}
+```
