@@ -52,16 +52,32 @@ Page content
 </body>
 ```
 
-**UPDATE**: The `form` element also seems not to work with CSS isolation:
+**UPDATE**: The `<form>` element also seems not to work with CSS isolation.
+The `<label>` and `<input>` elements only work if you do not apply the `asp-for=""` tag helper. 
 ```html
 <form>
-The form element is also not supported, regardless you apply tag helpers or do not
+    The form element is also not supported, regardless you apply tag helpers or do not
+    <label b-yate93u0ku for="works">This is a label that works!</label>
+    <input b-yate93u0ku id="works" type="text" value="This works fine"/>
+    <!-- The below elements have applied asp-for tag helpers -->
+    <label for="SomeProperty">This label does not work</label>
+    <input type="text" data-val="true" data-val-required="The This label does not work field is required." id="SomeProperty" name="SomeProperty" value="This input does not work" />
+    <label for="ThisDoesNotWorkEither">ThisDoesNotWorkEither</label>
+    <input type="text" data-val="true" data-val-required="The ThisDoesNotWorkEither field is required." id="ThisDoesNotWorkEither" name="ThisDoesNotWorkEither" value="Neither does this input filed" />
 </form>
 ```
 
 ```css
 /* _content/header-tag-css-isolation-repro/Pages/Index.cshtml.rz.scp.css */
 form[b-yate93u0ku] {
+    color: red;
+}
+
+label[b-yate93u0ku] {
+    color: red;
+}
+
+input[b-yate93u0ku] {
     color: red;
 }
 ```

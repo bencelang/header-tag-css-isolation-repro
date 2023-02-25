@@ -8,4 +8,10 @@ Page content
 
 <form>
 The form element is also not supported, regardless you apply tag helpers or do not
+<label for="works">This is a label that works!</label>
+<input id="works" type="text" value="This works fine"/>
+<label asp-for="SomeProperty"></label>
+<input asp-for="SomeProperty" />
+<label asp-for="ThisDoesNotWorkEither"></label>
+<input asp-for="ThisDoesNotWorkEither" />
 </form>
